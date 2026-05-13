@@ -1,0 +1,8 @@
+# Large model files
+models/*.gguf
+
+# Build directory
+build/
+
+# CMake
+cmake_output.txt
