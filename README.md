@@ -116,6 +116,13 @@ id,date,description,amount,category
 
 Categories: `Food`, `Transport`, `Entertainment`, `Utilities`, `Other`
 
+## Setup
+Clone the repo:
+git clone https://github.com/hemantakonwar-ops/students-expense-manager.git
+
+Download models manually and place in `models/`:
+- Phi-3.1-mini: https://huggingface.co/...
+- Mistral-7B:   https://huggingface.co/...
 ---
 
 ## License
