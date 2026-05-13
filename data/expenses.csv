@@ -1,0 +1,8 @@
+id,date,description,amount,category
+1,2026-05-01,"Lunch at canteen",85.00,Food
+2,2026-05-02,"Bus pass weekly",150.00,Transport
+4,2026-05-04,"Electricity bill share",320.00,Utilities
+5,2026-05-05,"Groceries",430.00,Food
+6,2026-05-05,"utensils",600.00,Utilities
+7,2026-05-13,"nuts",300.00,Food
+8,2026-05-09,"food",400.00,Food
