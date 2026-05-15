@@ -1,7 +1,7 @@
 # Student Expense Manager
 
 A CLI-based personal finance tracker with a local AI advisor powered by
-[llama.cpp](https://github.com/ggerganov/llama.cpp) running Mistral-7B-Instruct.
+[llama.cpp](https://github.com/ggerganov/llama.cpp) running Phi-3-mini.
 
 ## Features
 
@@ -9,7 +9,7 @@ A CLI-based personal finance tracker with a local AI advisor powered by
 - Category-wise totals and monthly budget summary
 - Overspend alerts and date-range filtering
 - Export plain-text reports to `reports/`
-- On-device AI financial advice via Mistral-7B (no internet required)
+- On-device AI financial advice via Phi-3-mini(no internet required)
 
 ---
 
@@ -51,17 +51,13 @@ mkdir -p models
 # Option A — Hugging Face CLI
 pip install huggingface_hub
 huggingface-cli download TheBloke/Mistral-7B-Instruct-v0.2-GGUF \
-    mistral-7b-instruct-v0.2.Q4_K_M.gguf \
+    Phi-3.1-mini-4k-instruct-Q4_K_M.gguf \
     --local-dir models/
 
 # Option B — direct wget (4.1 GB)
 wget -P models/ \
-  https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf
+  https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/Phi-3.1-mini-4k-instruct-Q4_K_M.gguf
 
-# Rename to match expected filename
-mv models/mistral-7b-instruct-v0.2.Q4_K_M.gguf \
-   models/mistral-7b-instruct-q4_k_m.gguf
-```
 
 ---
 
@@ -71,7 +67,7 @@ mv models/mistral-7b-instruct-v0.2.Q4_K_M.gguf \
 ./build/expense_manager
 ```
 
-The program looks for the model at `models/mistral-7b-instruct-q4_k_m.gguf`
+The program looks for the model at `models/Phi-3.1-mini-4k-instruct-Q4_K_M.gguf`
 relative to the project root. CSV data is read from `data/expenses.csv`.
 
 ---
@@ -85,7 +81,7 @@ student-expense-manager/
 ├── extern/
 │   └── llama.cpp/          ← auto-fetched by CMake
 ├── models/
-│   └── mistral-7b-instruct-q4_k_m.gguf
+│   └── Phi-3.1-mini-4k-instruct-Q4_K_M.gguf
 ├── data/
 │   └── expenses.csv
 ├── include/
@@ -116,13 +112,6 @@ id,date,description,amount,category
 
 Categories: `Food`, `Transport`, `Entertainment`, `Utilities`, `Other`
 
-## Setup
-Clone the repo:
-git clone https://github.com/hemantakonwar-ops/students-expense-manager.git
-
-Download models manually and place in `models/`:
-- Phi-3.1-mini: https://huggingface.co/...
-- Mistral-7B:   https://huggingface.co/...
 ---
 
 ## License
